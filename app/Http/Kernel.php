@@ -51,6 +51,13 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
+
+        // Admin, Member認証処理
+        'auth.admin.check' => \App\Http\Middleware\CheckAdminAuthenticate::class,
+
+        // 各ルートアクセス時にアクセス権限の確認を行う
+        'rejectroute.check' => \App\Http\Middleware\CheckRejectRoute::class,
+
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,

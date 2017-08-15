@@ -176,7 +176,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
     ],
 
     /*
@@ -227,5 +226,13 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
+    /*
+     |--------------------------------------------------------------------------
+     | Login Throttle Configuration
+     |--------------------------------------------------------------------------
+     */
+    'login_attempt'  => env('LOGIN_ATTEMPT'),
+    'login_locktime' => env('LOGIN_LOCKTIME'),
 
 ];
